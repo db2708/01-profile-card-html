@@ -122,9 +122,36 @@
   <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 48px; gap: 64px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
       <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">Entanglement Apparatus</div>
-      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-        <img src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px;">
+      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <button onclick="prevImage(0)" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8592;</button>
+        <img id="carousel-img-0" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s;">
+        <button onclick="nextImage(0)" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8594;</button>
       </div>
+      <script>
+        // Carousel images for each slot
+        const carouselImages = [
+          ["img/placeholder.png", "img/cat.png", "img/dog.png"],
+          ["img/placeholder.png", "img/scooter.png"],
+          ["img/placeholder.png", "img/me.png"]
+        ];
+        let carouselIndex = [0, 0, 0];
+        function showImage(slot) {
+          const img = document.getElementById(`carousel-img-${slot}`);
+          img.src = carouselImages[slot][carouselIndex[slot]];
+        }
+        function prevImage(slot) {
+          carouselIndex[slot] = (carouselIndex[slot] - 1 + carouselImages[slot].length) % carouselImages[slot].length;
+          showImage(slot);
+        }
+        function nextImage(slot) {
+          carouselIndex[slot] = (carouselIndex[slot] + 1) % carouselImages[slot].length;
+          showImage(slot);
+        }
+        // Initialize all carousels
+        for (let i = 0; i < carouselImages.length; i++) {
+          showImage(i);
+        }
+      </script>
     </div>
     <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 196px; padding: 24px; display: flex; align-items: flex-start; justify-content: center; font-size: 1.1rem; margin-left: 48px; text-align: center;">
       <div>
@@ -136,8 +163,10 @@
   <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 48px; gap: 64px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
       <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">3D Magnetic Field Mapper</div>
-      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-        <img src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px;">
+      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <button onclick="prevImage(1)" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8592;</button>
+        <img id="carousel-img-1" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s;">
+        <button onclick="nextImage(1)" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8594;</button>
       </div>
     </div>
     <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 196px; padding: 24px; display: flex; align-items: flex-start; font-size: 1.1rem; margin-left: 48px;">
@@ -150,8 +179,10 @@
   <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 48px; gap: 64px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
       <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">Electric Dipole Moment Search</div>
-      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-        <img src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px;">
+      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <button onclick="prevImage(2)" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8592;</button>
+        <img id="carousel-img-2" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s;">
+        <button onclick="nextImage(2)" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8594;</button>
       </div>
     </div>
     <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 196px; padding: 24px; display: flex; align-items: flex-start; font-size: 1.1rem; margin-left: 48px;">

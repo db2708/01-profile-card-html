@@ -8,27 +8,6 @@
   <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous">
   <style>
-    .ascii-bg-right {
-      position: fixed;
-      top: 40px;
-      right: 0;
-      left: auto;
-      width: 100vw;
-      height: calc(100vh - 40px);
-      color: #224644;
-      background: transparent;
-      font-family: monospace;
-      font-size: 16px;
-      white-space: pre;
-      z-index: 0;
-      pointer-events: none;
-      user-select: none;
-      text-align: right;
-      line-height: 1.1;
-      padding: 0 !important;
-      margin: 0 !important;
-      overflow: hidden;
-    }
     .card {
       margin-bottom: 0 !important;
     }
@@ -93,6 +72,27 @@
       left:18px;
       display: block;
     }
+    .ascii-bg-right {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: auto;
+      width: 520px;
+      height: 340px;
+      color: rgba(34,70,68,0.45);
+      background: transparent;
+      font-family: monospace;
+      font-size: 18px;
+      white-space: pre;
+      z-index: -1;
+      pointer-events: none;
+      user-select: none;
+      text-align: right;
+      line-height: 1.1;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -114,7 +114,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⠃⠀⢰⣿⠏⠀⢀⣴⣿⣿⣿⣿⣷⣶⣦⣄⡀⠀⠘⢿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠀⢀⡿⠃⠀⣠⣿⣿⡿⠉⠉⠉⠛⠻⢿⣿⣿⣷⣶⣬⣻⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡇⠀⠈⠀⢀⣴⣿⣿⣯⣠⣤⡿⠀⠀⠀⠀⠀⠈⠉⠛⠿⢿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⡿⠀⠀⠀⣠⣾⣿⡟⠋⢉⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠦⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⡿⠀⠀⠀⣠⣾⣿⡟⠋⢉⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠦⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣾⣿⣿⠃⠀⢀⣴⣿⣿⣿⡾⣷⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⢀⣀⣀⣤⣶⡾⠿⠟⢛⣿⣿⡿⠀⣠⣿⣿⣿⣿⠟⣴⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠰⣿⣿⠟⣋⣁⣤⣴⣾⣿⣿⣿⢇⣼⣿⣿⣿⡿⢃⣼⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -122,7 +122,7 @@
 ⠀⠀⠀⠻⣷⣄⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠰⣿⡟⠀⠀⠀⠀⠀⠀⣾⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠈⣿⡗⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢻⣧⠀⠀⠀⠀⠀⢰⣿⢿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⢰⣿⠀⣾⣿⣿⡿⣿⣿⣿⣿⣿⣷⠈⣿⣆⠀⠀⠀⢠⣿⠏⠀⢿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢸⣿⢸⡿⢋⣼⣿⡏⢻⣿⣿⣿⣿⣆⢿⣿⠀⠀⠀⣼⣿⠀⣶⠈⢻⣿⣤⣄⣀⣀⣤⣠⣤⡤⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢸⣿⢸⡿⢋⣼⣿⡏⢻⣿⣿⣿⣿⣆⢿⣿⠀⠀⠀⣼⣿⠀⣶⠈⢻⣿⣤⣄⣀⣀⣀⣀⣤⣠⣤⡤⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣼⣟⣠⣾⣿⠟⠙⢿⣦⡛⢿⣿⣿⣿⡿⠿⠿⠿⠿⠿⠇⣰⣿⣧⡈⠛⠛⠛⣋⣿⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣿⣿⠿⠋⠀⠀⠀⠈⠻⣿⣦⠻⣿⣿⣿⣷⣦⣀⠙⠻⣿⣿⣿⣿⣿⠉⣶⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⢼⠟⠁⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⣜⣿⣇⠈⣿⣿⣿⠂⣾⣿⢟⣻⣿⣷⡘⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -138,10 +138,10 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⠿⢋⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣍⠙⢿⣷⣦⣄⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⡿⠟⣡⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠷⠆⠉⠻⣿⣦⣄⡀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⠋⣀⣛⣋⣉⣉⣉⣉⣉⠙⣿⣿⣿⣿⣿⣿⡿⣠⣤⣶⣶⣶⣶⣿⣿⠿⠿⠿⠛⠛⠃
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠿⠿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢿⣷⡈⢿⣿⣿⣿⡿⢡⣿⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣦⣿⣿⣿⢁⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠿⠿⠿⠛⠛⠛⠛⠛⠛⠛⠛⠛⢿⣷⡈⢿⣿⣿⣿⡿⢡⣿⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣦⣿⣿⣿⢀⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢦⣀⠀⠀⠀⠀⢀⣠⣿⣿⣿⡛⠛⣾⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣦⣤⣶⡿⣿⣿⠟⠻⣿⣾⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣦⣤⣶⡿⣿⣿⠟⠻⣿⣾⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⡌⠙⠋⠑⠿⣿⣤⣀⠈⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⠟⠃⠀⢤⣤⣀⣈⣙⣻⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠾⠿⠿⠿⠾⣿⡇⣿⡟⠛⠛⠛⠛⠛⠛⠛⠛⠓⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -154,6 +154,22 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠋⠀⠀⠀⠀⠈⠳⣴⣿⣿⣶⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⢿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  </div>
+<div class="ascii-bg-right" style="position: fixed; bottom: 0; right: 0; left: auto; width: 700px; height: 450px; color: rgba(34,70,68,0.55); background: transparent; font-family: monospace; font-size: 25px; white-space: pre; z-index: -1; pointer-events: none; user-select: none; text-align: right; line-height: 1.1; padding: 0 !important; margin: 0 !important; overflow: hidden;">
+⠀⠀⠀⢸⣦⡀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⣏⠻⣶⣤⡶⢾⡿⠁⠀⢠⣄⡀⢀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣀⣼⠷⠀⠀⠁⢀⣿⠃⠀⠀⢀⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠴⣾⣯⣅⣀⠀⠀⠀⠈⢻⣦⡀⠒⠻⠿⣿⡿⠿⠓⠂⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠉⢻⡇⣤⣾⣿⣷⣿⣿⣤⠀⠀⣿⠁⠀⠀⠀⢀⣴⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠸⣿⡿⠏⠀⢀⠀⠀⠿⣶⣤⣤⣤⣄⣀⣴⣿⡿⢻⣿⡆⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠟⠁⠀⢀⣼⠀⠀⠀⠹⣿⣟⠿⠿⠿⡿⠋⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢳⣶⣶⣿⣿⣇⣀⠀⠀⠙⣿⣆⠀⠀⠀⠀⠀⠀⠛⠿⣿⣦⣤⣀⠀⠀
+⠀⠀⠀⠀⠀⠀⣹⣿⣿⣿⣿⠿⠋⠁⠀⣹⣿⠳⠀⠀⠀⠀⠀⠀⢀⣠⣽⣿⡿⠟⠃
+⠀⠀⠀⠀⠀⢰⠿⠛⠻⢿⡇⠀⠀⠀⣰⣿⠏⠀⠀⢀⠀⠀⠀⣾⣿⠟⠋⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀
+</div>
   <nav style="background: #112322; padding: 16px 0; text-align: right; color:#fff; margin: 0; display: flex; align-items: center; justify-content: space-between;">
   <span style="margin-left: 16px;"><i class="fa-solid fa-star" style="color: #1b3231; font-size: 38px;"></i></span>
     <span style="flex: 1; text-align: right;">
@@ -166,12 +182,15 @@
       <div class="img-text-overlay-container" style="display: flex; align-items: center; justify-content: center; height: 325px;">
   <img src="img/scooter.png" alt="Scooter" class="img-overlay" style="max-height: 325px; max-width: 100%; width: auto; height: auto; display: block; margin: auto 0;">
       </div>
-      <div class="card" style="margin: 0; flex: 1; min-width: 815px; height: 325px; text-align:center; display: flex; flex-direction: column; justify-content: center; color: #112322;">
+      <div class="card" style="margin: 0; flex: 1; min-width: 815px; height: 325px; text-align:center; display: flex; flex-direction: column; justify-content: center; color: #112322; background: rgba(225,244,244,0.25); border: none;">
         <div>
-          <h1 style="color: #224644;">Dominic Bishop</h1> <h2 style="color: #224644;">Undergraduate Researcher</h2>
-          <p style="color: #224644;">I'm a senior studying astronomy and astrophysics at Indiana University Bloomington interested in engineering, physics, and web design and development. </p>
+          <div style="display: flex; align-items: baseline; justify-content: center; gap: 12px;">
+            <h1 style="color: #1b3231; font-size: 2rem; margin-bottom: 8px;">Dominic Bishop -</h1>
+            <h2 style="color: #1b3231; font-size: 1.3rem; margin-bottom: 8px;">Undergraduate Researcher</h2>
+          </div>
+          <p style="color: #1b3231;">I'm a senior studying astronomy and astrophysics at Indiana University Bloomington interested in engineering, physics, and web design and development. </p>
           <div>
-            <a href="https://dev.to/" style="color: #224644;">resume</a>
+            <a href="https://dev.to/" style="color: #1b3231;">resume</a>
           </div>
         </div>
       </div>
@@ -179,8 +198,8 @@
   </div>
     </div>
   <!-- ...existing code for scooter.png and box 1... -->
-  <div style="width: 1240px; height: 80px; margin: 12px auto 0 auto; background: #e1f4f4; border-radius: 12px; border: 2px solid #003366; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 24px; text-align: center; position: relative; z-index: 2; color: #112322;">
-    <p style="color: #224644;">This is the second box spanning the width of the image and card.</p>
+  <div style="width: 1240px; height: 80px; margin: 12px auto 0 auto; background: rgba(225,244,244,0.25); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 24px; text-align: center; position: relative; z-index: 2; color: #112322;">
+    <p style="color: #1b3231;">This is the second box spanning the width of the image and card.</p>
   </div>
   <!-- End of box 2 -->
   <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 10px 0 0 0;">
