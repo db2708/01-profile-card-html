@@ -44,6 +44,9 @@
       padding: 16px 0;
       text-align: center;
       margin-bottom: 0;
+      width: 100%;
+      position: relative;
+      left: 0;
     }
     nav a {
       color: #fff;
@@ -112,83 +115,61 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   </div>
-  <nav style="background: #112322; padding: 16px 0; text-align: right; color:#fff; margin: 0; display: flex; align-items: center; justify-content: space-between;">
+  <nav style="background: #112322; padding: 16px 0; text-align: right; color:#fff; margin: 0; display: flex; align-items: center; justify-content: space-between; width: 100%; position: relative; left: 0;">
     <span style="margin-left: 16px;"><i class="fa-solid fa-star" style="color: #1b3231; font-size: 38px;"></i></span>
     <span style="flex: 1; text-align: right;">
       ˗ˏˋ<a href="index.html" style="color: #fff; text-decoration: none; margin-left: 5px; margin-right: 5px; font-weight: bold; font-size: 18px;">About Me</a> <span style="margin-right: 2px; margin-left: 5px; font-size:20px;">✦</span>
       <a href="projects.html" style="color: #fff; text-decoration: underline; margin-left: 5px; margin-right: 5px; font-weight: bold; font-size: 18px;">Projects</a> <span style="margin-right: 15px;">ˎˊ˗</span>
     </span>
   </nav>
-  <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 48px; gap: 64px;">
+  <div style="width: 100%; max-width: 750px; margin: 24px auto 0 auto; background: rgba(225,244,244,0.25); color: #1b3231; border-radius: 12px; padding: 20px 20px; font-size: 1.15rem; font-family: 'Melonfruit', Arial, sans-serif; box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-align: center;">
+    Here's some information on the various research projects I've worked on over the past two years, as well as three projects I'll be working on in the coming months at the bottom of the page. Click the arrows to look through the photos, or click on the image itself to enlarge it.
+  </div>
+  <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 32px; gap: 35px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">Entanglement Apparatus</div>
-      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+      <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">Entanglement Apparatus</div>
+  <div style="width: 320px; height: 220px; background: transparent; border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
         <button onclick="prevImage(0)" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8592;</button>
-        <img id="carousel-img-0" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s;">
+        <img id="carousel-img-0" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s; cursor: zoom-in;" onclick="openModal(0)">
         <button onclick="nextImage(0)" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8594;</button>
       </div>
-      <script>
-        // Carousel images for each slot
-        const carouselImages = [
-          ["img/placeholder.png", "img/cat.png", "img/dog.png"],
-          ["img/placeholder.png", "img/scooter.png"],
-          ["img/placeholder.png", "img/me.png"]
-        ];
-        let carouselIndex = [0, 0, 0];
-        function showImage(slot) {
-          const img = document.getElementById(`carousel-img-${slot}`);
-          img.src = carouselImages[slot][carouselIndex[slot]];
-        }
-        function prevImage(slot) {
-          carouselIndex[slot] = (carouselIndex[slot] - 1 + carouselImages[slot].length) % carouselImages[slot].length;
-          showImage(slot);
-        }
-        function nextImage(slot) {
-          carouselIndex[slot] = (carouselIndex[slot] + 1) % carouselImages[slot].length;
-          showImage(slot);
-        }
-        // Initialize all carousels
-        for (let i = 0; i < carouselImages.length; i++) {
-          showImage(i);
-        }
-      </script>
     </div>
-    <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 196px; padding: 24px; display: flex; align-items: flex-start; justify-content: center; font-size: 1.1rem; margin-left: 48px; text-align: center;">
+    <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 185px; padding: 24px; display: flex; align-items: flex-start; justify-content: center, font-size: 1.1rem; margin-left: 8px; text-align: center;">
       <div>
-        <h2 style="margin-top: 0; color: #112322; font-size: 1.3rem;">August 2023 - May 2024</h2>
-        <p style="margin-bottom: 0; color: #112322;">research poster link</p>
+        <h2 style="margin-top: 0; color: #1b3231; font-size: 1.3rem; justify-content: center;">August 2023 - May 2024 | Bloomington, In.</h2>
+        <p style="margin-bottom: 0; color: #1b3231;">Worked with a group to create a low cost quantum entanglement lab apparatus for use in a senior level physics lab. When a radioactive source is placed within the apparatus, entangleed photons are emitted and are then detected using a detector system designed by the group. An assoicated research poster was designed and is attached.</p>
       </div>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 48px; gap: 64px;">
+  <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 32px; gap: 35px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">3D Magnetic Field Mapper</div>
-      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+      <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">3D Magnetic Field Mapper</div>
+  <div style="width: 320px; height: 300px; background: transparent; border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
         <button onclick="prevImage(1)" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8592;</button>
-        <img id="carousel-img-1" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s;">
+        <img id="carousel-img-1" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s; cursor: zoom-in;" onclick="openModal(1)">
         <button onclick="nextImage(1)" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8594;</button>
       </div>
     </div>
-    <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 196px; padding: 24px; display: flex; align-items: flex-start; font-size: 1.1rem; margin-left: 48px;">
-      <div>
-        <h2 style="margin-top: 0; color: #112322; font-size: 1.3rem;">September 2024 - May 2025</h2>
-        <p style="margin-bottom: 0; color: #112322;">This area will contain a description of your project. You can add more details here as needed.</p>
+    <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 260px; padding: 24px; display: flex; align-items: flex-start; font-size: 1.1rem; margin-left: 8px;">
+      <div style="text-align: center; width: 100%;">
+        <h2 style="margin-top: 0; color: #1b3231; font-size: 1.3rem; align-content: center;">Sept. 2024 - May 2025 | Bloomington, In.</h2>
+        <p style="margin-bottom: 0; color: #1b3231;">Designed and assembled a 3D magnetic field mapping system using machined parts, Velmex bislide rails, and stepper motors to control movement. The mapper outputs 3D magnetic field gradient graphs and is controlled using a python script and an associated user interface that was created using QTCreator. A cart for convenient storage and transportation of the mapper and its associated components was also designed using CAD software and made using aluminum parts.</p>
       </div>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 48px; gap: 64px;">
+  <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 32px; gap: 35px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">Electric Dipole Moment Search</div>
-      <div style="width: 320px; height: 140px; background: rgba(225,244,244,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+  <div style="background: #112322; color: #fff; border-radius: 8px; width: 320px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 64px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">Electric Dipole Moment Search</div>
+  <div style="width: 320px; height: 185px; background: transparent; border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
         <button onclick="prevImage(2)" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8592;</button>
-        <img id="carousel-img-2" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s;">
+        <img id="carousel-img-2" src="img/placeholder.png" alt="Project Photo" style="max-width: 90%; max-height: 90%; border-radius: 6px; transition: opacity 0.3s; cursor: zoom-in;" onclick="openModal(2)">
         <button onclick="nextImage(2)" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #112322; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; z-index: 2;">&#8594;</button>
       </div>
     </div>
-    <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 196px; padding: 24px; display: flex; align-items: flex-start; font-size: 1.1rem; margin-left: 48px;">
-      <div>
-        <h2 style="margin-top: 0; color: #112322; font-size: 1.3rem;">May 2025 - July 2025</h2>
-        <p style="margin-bottom: 0; color: #112322;">This area will contain a description of your project. You can add more details here as needed.</p>
+    <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 420px; min-height: 196px; padding: 24px; display: flex; align-items: flex-start; font-size: 1.1rem; margin-left: 8px;">
+      <div style="text-align: center; width: 100%;">
+        <h2 style="margin-top: 0; color: #1b3231; font-size: 1.3rem; align-content: center;">May 2025 - July 2025 | Nagoya, Japan</h2>
+        <p style="margin-bottom: 0; color: #1b3231;">Spent ten weeks at Nagoya University working on an experiment designed to measure the electric dipole moment (EDM) of polarized helium<sub>3</sub> atoms. The He<sub>3</sub> was polarized using spin exchange optical pumping, and three sets of coils were used to sustain polarization, align the spins of the atoms, and then another set to 'kick' the spins out of alignment. By creating a high voltage electric field around the He<sub>3</sub> you are then able to observe if there are differences in the rates of their realignment which would indicate the presence of an EDM.</p>
       </div>
     </div>
   </div>
@@ -197,22 +178,73 @@
   <!-- Upcoming Projects Title Boxes -->
   <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; gap: 32px; margin-bottom: 4px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="background: #112322; color: #fff; border-radius: 8px; width: 212px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">Upcoming Project 1</div>
-      <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500; box-shadow: none; text-align: center; padding: 16px;">Brief blurb goes here.</div>
+      <div style="background: #112322; color: #fff; border-radius: 8px; width: 246px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; margin-left: 15px;">Sustainability Timeline</div>
+    <div style="background: rgba(225,244,244,0.25); color: #1b3231; border-radius: 8px; width: 215px; height: 150px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500; box-shadow: none; text-align: center; padding: 16px; margin-left: 15px;">An interactive timeline will showcase Intel's journey towards becoming a more sustainable company. It will then be adapted for global audiences, to ensure it works across a variety of languages.</div>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="background: #112322; color: #fff; border-radius: 8px; width: 212px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">Upcoming Project 2</div>
-      <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500; box-shadow: none; text-align: center; padding: 16px;">Brief blurb goes here.</div>
+      <div style="background: #112322; color: #fff; border-radius: 8px; width: 246px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">NASA Photo Archive</div>
+    <div style="background: rgba(225,244,244,0.25); color: #1b3231; border-radius: 8px; width: 215px; height: 150px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500; box-shadow: none; text-align: center; padding: 16px;">A dynamic photo gallery powered by NASA's API will showcase their Astronomy Photo of the Day archive, providing users with real astronomical data and stunning images in a bite-sized and accessible format.</div>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="background: #112322; color: #fff; border-radius: 8px; width: 212px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">Upcoming Project 3</div>
-      <div style="background: rgba(225,244,244,0.25); color: #112322; border-radius: 8px; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500; box-shadow: none; text-align: center; padding: 16px;">Brief blurb goes here.</div>
+      <div style="background: #112322; color: #fff; border-radius: 8px; width: 246px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">L'Oréal Routine Builder</div>
+    <div style="background: rgba(225,244,244,0.25); color: #1b3231; border-radius: 8px; width: 215px; height: 150px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500; box-shadow: none; text-align: center; padding: 16px;">L'Oréal's smart skincare routine builder will allow users to create a custom skincare routine based off of personal needs. The site will also feature an AI chatbot to provide personalized product recommendations, making this process even easier.</div>
     </div>
   </div>
   <!-- End Upcoming Projects Blurbs -->
   <div style="height: 65px;"></div>
-  <nav style="background: #112322; padding: 12px 0; text-align: center; position: fixed; bottom: 0; left: 0; width: 100vw; z-index: 10;">
+  <nav style="background: #112322; padding: 12px 0; text-align: center; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10;">
     <span style="color: #fff; font-size: 16px;">&copy; 2025 Dominic</span>
   </nav>
+  <!-- Modal for zoomed image -->
+  <div id="zoom-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+    <span onclick="closeModal()" style="position:absolute; top:32px; right:48px; color:#fff; font-size:48px; cursor:pointer; z-index:1001;">&times;</span>
+    <img id="zoom-img" src="" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+  </div>
+  <script>
+    // Carousel images for each slot
+    const carouselImages = [
+      ["img/Projects/grefront.png", "img/Projects/greback.png", "img/Projects/detector.png", "img/Projects/crystal.png", "img/Projects/poster.png"],
+      ["img/Projects/MapperFront.jpeg", "img/Projects/MapperSide.jpg", "img/Projects/CartCad.png", "img/Projects/MapperCad.PNG"],
+      ["img/Projects/coils.png", "img/Projects/kicker.jpeg", "img/Projects/wholesetup.jpeg"]
+    ];
+    let carouselIndex = [0, 0, 0];
+    function showImage(slot) {
+      const img = document.getElementById(`carousel-img-${slot}`);
+      img.src = carouselImages[slot][carouselIndex[slot]];
+    }
+    function prevImage(slot) {
+      carouselIndex[slot] = (carouselIndex[slot] - 1 + carouselImages[slot].length) % carouselImages[slot].length;
+      showImage(slot);
+    }
+    function nextImage(slot) {
+      carouselIndex[slot] = (carouselIndex[slot] + 1) % carouselImages[slot].length;
+      showImage(slot);
+    }
+    // Initialize all carousels
+    for (let i = 0; i < carouselImages.length; i++) {
+      showImage(i);
+    }
+    // Zoom modal functions
+    function openModal(slot) {
+      const modal = document.getElementById('zoom-modal');
+      const zoomImg = document.getElementById('zoom-img');
+      zoomImg.src = carouselImages[slot][carouselIndex[slot]];
+      modal.style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('zoom-modal').style.display = 'none';
+    }
+    // Only close modal on Escape, do not change background
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('zoom-modal');
+        if (modal.style.display === 'flex') {
+          closeModal();
+          document.body.style.background = '#1b3231'; // restore background color
+          e.preventDefault();
+        }
+      }
+    });
+  </script>
 </body>
 </html>
